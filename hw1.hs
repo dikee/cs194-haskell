@@ -10,14 +10,12 @@ toDigits n
     | otherwise         = toDigits (n `div` 10) ++ [n `mod` 10]
 
 
-
 -- find the reverse digits of a number
 toDigitsRev  :: Integer -> [Integer]
 toDigitsRev n = reverse $ toDigits n
 
 
 -- Exercise 2
-
 
 -- Double every other digit in list starting from the right
 doubleEveryOther :: [Integer] -> [Integer]
@@ -38,9 +36,7 @@ sumDigits (x:xs) = sum (toDigits x) + sumDigits xs
 
 -- Exercise 4
 
-
 -- Check whether a credit card is valid
 validate :: Integer -> Bool
 validate 0 = False
 validate n = rem (sumDigits (doubleEveryOther (toDigits n))) 10 == 0
--- validate n = rem (sumDigits (doubleEveryOther (toDigits n))) 10 == 0
